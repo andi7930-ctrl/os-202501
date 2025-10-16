@@ -45,6 +45,7 @@ dmesg | tail -n10
 Sertakan screenshot hasil percobaan atau diagram:
 ![alt text](screenshots/screenshotssyscall_ls.png)
 ![alt text](screenshots/screenshotssyscall2_ls.png)
+![alt text](screenshots/screenshotssyscall3_ls.png)
 
 
 ---
