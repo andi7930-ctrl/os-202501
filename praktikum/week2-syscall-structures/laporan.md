@@ -14,20 +14,27 @@ Topik: syscall-structures
 ## Tujuan
 Tuliskan tujuan praktikum minggu ini.  
 Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+> Tujuan mempelajari mekanisme system call dan struktur sistem operasi adalah untuk memahami bagaimana sebuah program dapat berkomunikasi dengan kernel dan perangkat keras. Dengan memahami konsep ini, kita dapat mengetahui alur kerja sistem dari saat perintah dijalankan hingga perangkat keras meresponsnya. Pengetahuan ini sangat penting karena system call menjadi jembatan antara ruang pengguna (user space) dan ruang kernel (kernel space), sehingga proses eksekusi dapat berjalan dengan aman dan terkontrol.
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1. System call sebagai penghubung — System call menjadi jembatan antara program pengguna dan kernel untuk mengakses sumber daya sistem secara aman.
+2. Struktur sistem operasi berlapis — Kernel, file system, device driver, dan user interface saling terhubung untuk mengatur jalannya sistem.
+3. Pengelolaan sumber daya terpusat — Sistem operasi mengontrol CPU, memori, dan perangkat keras agar tidak terjadi konflik.
+4. Keamanan dan stabilitas sistem — Akses ke sumber daya penting difilter melalui kernel untuk mencegah kerusakan.
+5. Dasar pemahaman sistem komputer — Memahami system call dan struktur OS membantu dalam debugging, pengembangan, dan administrasi sistem.
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. Buka terminal pada sistem operasi (misalnya Linux).
+2. Buat file program baru dengan teks editor.
+3. Tulis kode sederhana yang menggunakan system call (contohnya menampilkan teks atau membaca file).
+4. Simpan dan kompilasi program menggunakan gcc atau compiler lain.
+5. Jalankan program untuk melihat interaksi dengan sistem operasi.
+6. Uji program beberapa kali agar hasil sesuai harapan.
+7. Simpan perubahan ke Git dengan pesan commit yang jelas.
 
 ---
 
@@ -46,19 +53,29 @@ Sertakan screenshot hasil percobaan atau diagram:
 ![alt text](screenshots/screenshotssyscall_ls.png)
 ![alt text](screenshots/screenshotssyscall2_ls.png)
 ![alt text](screenshots/screenshotssyscall3_ls.png)
+![alt text](screenshots/praktikumweek2-syscall-structurescreenshotssyscall-diagram.png
+)
 
 
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+- Jelaskan makna hasil percobaan.
+  Makna dari hasil percobaan tersebut adalah untuk menunjukkan bagaimana program berinteraksi langsung dengan sistem operasi melalui mekanisme system call. Saat program dijalankan, setiap instruksi yang membutuhkan akses ke sumber daya — seperti menulis ke layar, membaca file, atau membuka berkas tidak dilakukan secara langsung oleh program, melainkan melalui kernel.  
+- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
+  Hasil percobaan menunjukkan bahwa setiap program berinteraksi dengan sistem operasi melalui system call yang diteruskan ke kernel. Kernel berfungsi mengatur dan mengendalikan akses ke sumber daya sistem seperti memori, CPU, dan perangkat keras. Hal ini membuktikan teori bahwa dalam arsitektur sistem operasi, system call menjadi jembatan antara user space dan kernel space, sehingga proses berjalan aman, efisien, dan terstruktur. 
+- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
+  Pada Linux, system call bersifat lebih transparan dan mudah diamati menggunakan alat seperti strace. Setiap interaksi program dengan kernel dapat dilacak dengan jelas, misalnya saat membuka file atau menulis ke layar. Hal ini karena Linux dirancang sebagai sistem terbuka (open source), sehingga struktur system call-nya terdokumentasi dengan baik.
+
+Sementara itu, pada Windows, system call bersifat lebih tertutup dan kompleks. Akses langsung ke daftar system call tidak semudah di Linux karena Windows menggunakan lapisan tambahan seperti Win32 API. Akibatnya, hasil percobaan serupa tidak dapat dilacak langsung dengan perintah sederhana seperti strace, dan membutuhkan alat khusus seperti Process Monitor.  
 
 ---
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1. System call menjadi penghubung utama antara program dan kernel, memungkinkan akses ke sumber daya sistem secara aman dan terstruktur.
+2. Kernel berperan sebagai pengendali sistem, mengatur proses, memori, dan perangkat keras agar program berjalan stabil dan efisien.
+3. Perbedaan OS memengaruhi cara observasi, di mana Linux lebih terbuka dan mudah dilacak, sedangkan Windows menggunakan lapisan API tambahan sehingga prosesnya lebih tersembunyi.
 
 ---
 
@@ -83,7 +100,7 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?
 - Bagaimana cara Anda mengatasinya?  
 
 ---
