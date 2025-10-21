@@ -1,13 +1,15 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: Manajemen File dan Permission di Linux
+
+
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Andi Pratama  
+- **NIM**   : 250202975  
+- **Kelas** : 1IKRA
 
 ---
 
