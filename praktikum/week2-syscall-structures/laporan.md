@@ -60,7 +60,20 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 - Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
   Pada Linux, system call bersifat lebih transparan dan mudah diamati menggunakan alat seperti strace. Setiap interaksi program dengan kernel dapat dilacak dengan jelas, misalnya saat membuka file atau menulis ke layar. Hal ini karena Linux dirancang sebagai sistem terbuka (open source), sehingga struktur system call-nya terdokumentasi dengan baik.
 
-Sementara itu, pada Windows, system call bersifat lebih tertutup dan kompleks. Akses langsung ke daftar system call tidak semudah di Linux karena Windows menggunakan lapisan tambahan seperti Win32 API. Akibatnya, hasil percobaan serupa tidak dapat dilacak langsung dengan perintah sederhana seperti strace, dan membutuhkan alat khusus seperti Process Monitor.  
+Sementara itu, pada Windows, system call bersifat lebih tertutup dan kompleks. Akses langsung ke daftar system call tidak semudah di Linux karena Windows menggunakan lapisan tambahan seperti Win32 API. Akibatnya, hasil percobaan serupa tidak dapat dilacak langsung dengan perintah sederhana seperti strace, dan membutuhkan alat khusus seperti Process Monitor.
+
+
+## Analisis tabel observasi
+   ###  Tabel Analisis Perintah
+
+| No | Perintah | Fungsi Utama | Contoh Output |
+|----|-----------|---------------|----------------|
+| 1 | strace ls | Melacak seluruh system call yang dijalankan ketika perintah ls dieksekusi. | openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) |
+| 2 | strace -e trace=open,read,write,close cat /etc/passwd | Memfilter dan menampilkan hanya system call tertentu (seperti open, read, write, close) yang digunakan saat membaca file /etc/passwd. | read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0...", 220) |
+| 3 | dmesg tail | Menampilkan pesan kernel terbaru yang muncul selama sistem beroperasi. | [4067.875372] sd 0:0:2:0: [sdb] Mode Sense: 1f 00 00 08 |
+
+*Sumber:*  
+- [https://www.techtarget.com/searchsoftwarequality/](https://www.techtarget.com/searchsoftwarequality/)
 
 ---
 
