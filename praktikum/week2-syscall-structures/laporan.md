@@ -73,8 +73,7 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ![alt text](screenshots/screenshotssyscall_ls.png)
 ![alt text](screenshots/screenshotssyscall2_ls.png)
 ![alt text](screenshots/screenshotssyscall3_ls.png)
-![alt text](screenshots/praktikumweek2-syscall-structurescreenshotssyscall-diagram.png
-)
+![alt text](screenshots/diagram.drawio.png)
 
 
 ---
