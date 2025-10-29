@@ -101,6 +101,7 @@ ls -l percobaan.txt
 
 ## Hasil Eksekusi
 Screenshot hasil percobaan:
+![alt text](<screenshots/
 
 
 ---
@@ -113,7 +114,7 @@ Screenshot hasil percobaan:
 
 | **No** | **Perintah** | **Output / Hasil** | **Analisis / Penjelasan** | **Sumber Referensi** |
 |:--:|:----------------|:-------------------|:---------------------------|:---------------------|
-| 1 | `pwd` | `/home/rizky172007/os-202501-250202926` | Menampilkan direktori kerja (working directory) saat ini. Artinya pengguna sedang berada di folder proyek bernama `os-202501-250202926`. | Abraham Silberschatz, *Operating System Concepts*, 10th Ed., Wiley, 2018. |
+| 1 | `pwd` | `/home/andipratama-250202975/os-202501` | Menampilkan direktori kerja (working directory) saat ini. Artinya pengguna sedang berada di folder proyek bernama `os-202501-250202975`. | Abraham Silberschatz, *Operating System Concepts*, 10th Ed., Wiley, 2018. |
 | 2 | `ls -l` | `LICENSE`, `README.md`, `docs`, `praktikum` | Menampilkan isi folder aktif secara detail (satu item per baris). File dan folder tersebut berisi dokumentasi serta data tugas praktikum. | Andrew S. Tanenbaum, *Modern Operating Systems*, 4th Ed., Pearson, 2015. |
 | 3 | `cd /tmp` | *(tidak ada output)* | Perintah `cd` digunakan untuk berpindah direktori. Setelah perintah ini dijalankan, direktori aktif berpindah dari `/home/...` ke `/tmp`. | *Linux Manual Pages* — `man cd`. |
 | 4 | `ls -a` | `.`, `..`, `.X11-unix`, `snap-private-tmp`, `systemd-private-*` | Menampilkan semua isi direktori `/tmp`, termasuk file tersembunyi (diawali titik `.`). Folder `.X11-unix` digunakan oleh sistem grafis X11, sedangkan `systemd-private-*` adalah direktori sementara yang dibuat layanan sistem untuk menjaga keamanan dan isolasi proses. | *Linux Manual Pages* — `man ls`; *Systemd Documentation* (freedesktop.org). |
@@ -136,12 +137,12 @@ Screenshot hasil percobaan:
 
 | No | Perintah yang Dijalankan | Hasil / Output (`ls -l`) | Analisis / Keterangan | Referensi |
 |----|---------------------------|--------------------------|------------------------|------------|
-| 1 | `echo "Hello <RIZKY IQBAL HISYAM><250202926>" > percobaan.txt` | *File baru dibuat* | Membuat file teks baru bernama `percobaan.txt` dengan isi teks tertentu. Pemilik awal adalah user yang sedang login. | Shotts, *The Linux Command Line*, 2019 |
-| 2 | `ls -l percobaan.txt` | `-rw-r--r-- 1 rizky172007 rizky172007 38 Oct 20 22:07 percobaan.txt` | Permission default (`rw-r--r--` / 644) menunjukkan bahwa pemilik dapat membaca dan menulis, sedangkan group dan others hanya dapat membaca. | GNU Coreutils Manual – `ls` |
+| 1 | `echo "Hello <ANDI PRATAMA><250202975>" > percobaan.txt` | *File baru dibuat* | Membuat file teks baru bernama `percobaan.txt` dengan isi teks tertentu. Pemilik awal adalah user yang sedang login. | Shotts, *The Linux Command Line*, 2019 |
+| 2 | `ls -l percobaan.txt` | `-rw-r--r-- 1 andi andi 38 Oct 20 22:07 percobaan.txt` | Permission default (`rw-r--r--` / 644) menunjukkan bahwa pemilik dapat membaca dan menulis, sedangkan group dan others hanya dapat membaca. | GNU Coreutils Manual – `ls` |
 | 3 | `chmod 600 percobaan.txt` | *Tidak ada output (izin berubah)* | Mengubah mode akses menjadi `600` (`rw-------`), artinya hanya pemilik file yang dapat membaca dan menulis. | Tanenbaum, *Modern Operating Systems*, 2015 |
-| 4 | `ls -l percobaan.txt` | `-rw------- 1 rizky172007 rizky172007 38 Oct 20 22:07 percobaan.txt` | Hanya user `rizky` yang memiliki akses penuh terhadap file, sedangkan group dan others tidak memiliki akses. | Silberschatz, *Operating System Concepts*, 2018 |
+| 4 | `ls -l percobaan.txt` | `-rw------- andi andi 38 Oct 20 22:07 percobaan.txt` | Hanya user `rizky` yang memiliki akses penuh terhadap file, sedangkan group dan others tidak memiliki akses. | Silberschatz, *Operating System Concepts*, 2018 |
 | 5 | `sudo chown root percobaan.txt` | *Tidak ada output (pemilik berubah)* | Mengubah kepemilikan file dari `rizky` menjadi `root`. | Linux Manual Page – `chown(1)` |
-| 6 | `ls -l percobaan.txt` | `-rw------- 1 root rizky172007 38 Oct 20 22:07 percobaan.txt` | File kini dimiliki oleh `root`. Karena permission masih `600`, user biasa tidak dapat membaca maupun menulis file tersebut. | Silberschatz, *Operating System Concepts*, 2018 |
+| 6 | `ls -l percobaan.txt` | `-rw------- 1 root andi 38 Oct 20 22:07 percobaan.txt` | File kini dimiliki oleh `root`. Karena permission masih `600`, user biasa tidak dapat membaca maupun menulis file tersebut. | Silberschatz, *Operating System Concepts*, 2018 |
 
 
 **Quiz**
@@ -175,18 +176,36 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1.  **Apa fungsi dari perintah `chmod`?**
+
+    **Jawaban:**
+    `chmod` adalah singkatakn dari *change mode*. Fungsinya untuk mengubah izin akses / *permissions* sebuah file atau direktori. Perintah ini menentukan siapa saja yang boleh membaca (`r`), menulis (`w`), dan mengeksekusi (`x`) file tersebut, yang berlaku untuk pemilik file, grup, dan pengguna lainnya.
+
+-----
+
+2.  **Apa arti dari kode permission `rwxr-xr--`?**
+
+    **Jawaban:**
+    | Kode Perimission | Keterangan |
+    | :--- | :--- |
+    | `rwx` | Izin untuk Pemilik(*User*). Pemilik file memiliki izin penuh untuk membaca (*read*), menulis (*write*), dan mengeksekusi (*execute*) file tersebut. |
+    | `r-x` | Izin untuk Grup. Pengguna yang termasuk dalam grup file ini dapat membaca (*read*) dan mengeksekusi (*execute*), tetapi tidak dapat menulis atau mengubah file. |
+    | `r--` | Pengguna lain di luar pemilik dan grup hanya dapat membaca (*read*) file tersebut. |
+-----
+
+3.  **Jelaskan perbedaan antara `chown` dan `chmod`.**
+
+    **Jawaban:**
+    Perbedaannya terletak pada aspek keamanan yang mereka kontrol
+      * `chown` *change owner* mengubah **siapa yang memiliki** file atau direktori. Perintah ini mengatur aspek kepemilikan (user dan group).
+      * `chmod` *change mode* mengubah **apa yang dapat dilakukan** terhadap file atau direktori. Perintah ini mengatur aspek izin akses (baca, tulis, eksekusi).
+
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?tidak  
 - Bagaimana cara Anda mengatasinya?  
 
 ---
