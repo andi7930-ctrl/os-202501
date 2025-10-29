@@ -171,7 +171,11 @@ Keduanya memiliki peran untuk mengatur hak akses, menjaga kerahasiaan, dan keter
 
 ---
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+Dari praktikum ini, dapat disimpulkan bahwa:
+
+  * Navigasi dan manipulasi file di lingkungan Linux sangat bergantung pada perintah-perintah dasar seperti `ls`, `cd`, `pwd`, dan `cat`, yang masing-masing memiliki fungsi spesifik untuk berinteraksi dengan sistem file.
+  * Keamanan file di Linux diatur secara ketat melalui mekanisme **permission** dan **ownership**. Perintah `chmod` berfungsi untuk mengubah hak akses (baca, tulis, eksekusi), sedangkan `chown` berfungsi untuk mengubah kepemilikan (user dan group).
+  * Pemahaman dan penggunaan yang benar atas `chmod` dan `chown` sangat krusial untuk menjaga keamanan dan integritas data dalam sistem operasi multi-user seperti Linux.
 
 ---
 
