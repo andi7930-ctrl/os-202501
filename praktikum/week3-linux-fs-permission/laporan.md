@@ -101,7 +101,7 @@ ls -l percobaan.txt
 
 ## Hasil Eksekusi
 Screenshot hasil percobaan:
-![alt text](<screenshots/
+![alt text](<screenshots/eksperimen.png>)
 
 
 ---
